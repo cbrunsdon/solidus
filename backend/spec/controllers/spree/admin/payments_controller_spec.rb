@@ -74,6 +74,8 @@ module Spree
       end
 
       describe '#new' do
+        subject { spree_get :new, order_id: order.number }
+
         # Regression test for https://github.com/spree/spree/issues/3233
         context "with a backend payment method" do
           before do
@@ -81,11 +83,12 @@ module Spree
           end
 
           it "loads backend payment methods" do
-            spree_get :new, order_id: order.number
+            subject
             expect(response.status).to eq(200)
             expect(assigns[:payment_methods]).to include(@payment_method)
           end
         end
+
       end
 
       describe '#index' do
