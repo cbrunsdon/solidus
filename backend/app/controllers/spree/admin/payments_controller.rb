@@ -7,6 +7,8 @@ module Spree
       before_filter :load_data
       before_filter :require_bill_address, only: [:index]
 
+      before_filter :load_user_store_credits, only: :new
+
       respond_to :html
 
       def index
@@ -65,6 +67,12 @@ module Spree
       end
 
       private
+
+      def load_user_store_credits
+        @store_credits = if @order.user
+          @order.user.store_credits.reject { |store_credit| store_credit.amount_remaining.zero? }
+        end
+      end
 
       def object_params
         if params[:payment] && params[:payment_source] && (source_params = params.delete(:payment_source)[params[:payment][:payment_method_id]])

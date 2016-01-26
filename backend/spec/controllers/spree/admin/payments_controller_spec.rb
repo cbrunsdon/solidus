@@ -89,6 +89,19 @@ module Spree
           end
         end
 
+        context 'with store_credit payment method' do
+          let(:order) { create(:order, user: user ) }
+          let!(:store_credit) { create :store_credit, user: user }
+
+          before do
+            create :store_credit_payment_method, display_on: nil
+          end
+
+          it 'loads users store credits into list' do
+            subject
+            expect(assigns(:store_credits)).to eq [store_credit]
+          end
+        end
       end
 
       describe '#index' do
