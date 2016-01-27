@@ -23,6 +23,7 @@ module Spree
       @payment.request_env = @request_env if @request_env
       @payment.attributes = @attributes
 
+      binding.pry
       if source_attributes[:existing_card_id].present?
         build_existing_card
       else
