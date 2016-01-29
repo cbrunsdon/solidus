@@ -23,9 +23,10 @@ module Spree
       @payment.request_env = @request_env if @request_env
       @payment.attributes = @attributes
 
-      binding.pry
       if source_attributes[:existing_card_id].present?
         build_existing_card
+      elsif source_attributes[:existing_credit_id].present?
+        build_store_credit
       else
         build_source
       end
@@ -36,6 +37,11 @@ module Spree
     private
 
     attr_reader :order, :payment, :attributes, :source_attributes
+
+    def build_store_credit
+      store_credit = available_credit.find(source_attributes[:existing_credit_id])
+      payment.source = store_credit
+    end
 
     def build_source
       payment_method = payment.payment_method
@@ -63,6 +69,14 @@ module Spree
         CreditCard.where(user_id: user_id)
       else
         CreditCard.none
+      end
+    end
+
+    def available_credit
+      if user_id = order.user_id
+        StoreCredit.where(user_id: user_id)
+      else
+        StoreCredit.none
       end
     end
   end

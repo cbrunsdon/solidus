@@ -62,6 +62,16 @@ module Spree
       end
     end
 
+    context 'with an existing store credit' do
+      let(:payment_method) { create(:store_credit_payment_method) }
+      let(:user) { create(:user) }
+
+      context 'with a valid credit' do
+        let(:store_credit) { create :store_credit, user: user }
+      end
+
+    end
+
     context 'with an existing credit card' do
       let(:user) { create(:user) }
       let!(:credit_card) { create(:credit_card, user: order.user) }

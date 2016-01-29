@@ -88,7 +88,8 @@ module Spree
       :number, :month, :year, :expiry, :verification_value,
       :first_name, :last_name, :cc_type, :gateway_customer_profile_id,
       :gateway_payment_profile_id, :last_digits, :name, :encrypted_data,
-      :existing_card_id
+      :existing_card_id,
+      :existing_credit_id # used to specify which store credit to apply
     ]
 
     @@stock_item_attributes = [:variant, :stock_location, :backorderable, :variant_id]
