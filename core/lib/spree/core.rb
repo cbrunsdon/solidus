@@ -88,6 +88,12 @@ require 'spree/core/price_migrator'
 require 'spree/preferences/preferable_class_methods'
 require 'spree/preferences/preferable'
 require 'concerns/spree/ransackable_attributes'
+require 'concerns/spree/display_money'
 
 require 'spree/base'
+
+require 'spree/user_class_handle'
 require 'spree/product'
+
+require 'spree/order/payments'
+require 'spree/order'
