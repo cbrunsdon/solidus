@@ -91,11 +91,15 @@ require 'spree/preferences/preferable_class_methods'
 require 'spree/preferences/preferable'
 require 'concerns/spree/ransackable_attributes'
 require 'concerns/spree/display_money'
+require 'concerns/spree/default_price'
 
 require 'spree/base'
 
 require 'spree/user_class_handle'
 require 'spree/product'
 
+require 'spree/variant'
+
 require 'spree/order/payments'
 require 'spree/order'
+require 'spree/line_item'
