@@ -86,3 +86,10 @@ require 'spree/core/stock_configuration'
 require 'spree/permission_sets'
 
 require 'spree/core/price_migrator'
+
+require 'spree/preferences/preferable_class_methods'
+require 'spree/preferences/preferable'
+require 'concerns/spree/ransackable_attributes'
+
+require 'spree/base'
+require 'spree/product'
