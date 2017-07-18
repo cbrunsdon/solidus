@@ -94,6 +94,7 @@ require 'concerns/spree/display_money'
 require 'concerns/spree/default_price'
 require 'concerns/spree/calculated_adjustments'
 require 'concerns/spree/adjustment_source'
+require 'concerns/spree/named_type'
 
 require 'spree/base'
 
@@ -189,3 +190,23 @@ require 'spree/return_item/eligibility_validator/default'
 require 'spree/return_item/exchange_variant_eligibility/same_option_value'
 require 'spree/return_item/exchange_variant_eligibility/same_product'
 require 'spree/return_item'
+
+require 'spree/refund_reason'
+require 'spree/refund'
+
+require 'spree/reimbursement_type'
+require 'spree/reimbursement_type/reimbursement_helpers'
+require 'spree/reimbursement_type/credit'
+require 'spree/reimbursement_type/exchange'
+require 'spree/reimbursement_type/original_payment'
+require 'spree/reimbursement_type/store_credit'
+
+require 'spree/payment_source'
+require 'spree/store_credit'
+
+require 'spree/reimbursement_tax_calculator'
+require 'spree/reimbursement/credit'
+require 'spree/reimbursement/reimbursement_type_validator'
+require 'spree/reimbursement/reimbursement_type_engine'
+require 'spree/reimbursement_performer'
+require 'spree/reimbursement'
