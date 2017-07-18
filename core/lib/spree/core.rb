@@ -170,3 +170,11 @@ require 'spree/calculator/shipping/per_item'
 require 'spree/calculator/shipping/price_sack'
 require 'spree/calculator/tiered_flat_rate'
 require 'spree/calculator/tiered_percent'
+
+
+# our models rely on paperclip to be initialized by rails init, which isn't guaranteed to have ran when solidus_core is loaded.
+# TODO: Find a better place for this
+Paperclip::Railtie.insert unless ActiveRecord::Base.ancestors.include? Paperclip::Glue
+
+require 'spree/taxon'
+require 'spree/taxonomy'
