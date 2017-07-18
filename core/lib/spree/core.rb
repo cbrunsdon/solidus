@@ -208,3 +208,13 @@ require 'spree/reimbursement/reimbursement_type_validator'
 require 'spree/reimbursement/reimbursement_type_engine'
 require 'spree/reimbursement_performer'
 require 'spree/reimbursement'
+
+
+require 'spree/store'
+require 'spree/store_credit_category'
+require 'spree/store_credit_event'
+require 'spree/store_credit_type'
+require 'spree/store_credit_update_reason'
+require 'spree/store_payment_method'
+require 'spree/store_selector/by_server_name'
+require 'spree/store_selector/legacy'
