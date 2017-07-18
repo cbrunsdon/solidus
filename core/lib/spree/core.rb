@@ -176,3 +176,14 @@ Paperclip::Railtie.insert unless ActiveRecord::Base.ancestors.include? Paperclip
 
 require 'spree/taxon'
 require 'spree/taxonomy'
+
+require 'spree/return_item/eligibility_validator/base_validator'
+require 'spree/return_item/eligibility_validator/inventory_shipped'
+require 'spree/return_item/eligibility_validator/no_reimbursements'
+require 'spree/return_item/eligibility_validator/order_completed'
+require 'spree/return_item/eligibility_validator/rma_required'
+require 'spree/return_item/eligibility_validator/time_since_purchase'
+require 'spree/return_item/eligibility_validator/default'
+require 'spree/return_item/exchange_variant_eligibility/same_option_value'
+require 'spree/return_item/exchange_variant_eligibility/same_product'
+require 'spree/return_item'
