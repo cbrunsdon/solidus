@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.license     = 'BSD-3-Clause'
 
   s.files        = `git ls-files`.split("\n")
-  s.require_path = 'lib'
+  s.require_path = ['lib', 'app/models']
 
   s.required_ruby_version     = '>= 2.2.2'
   s.required_rubygems_version = '>= 1.8.23'
