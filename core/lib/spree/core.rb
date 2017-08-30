@@ -84,5 +84,3 @@ require 'spree/core/controller_helpers/strong_parameters'
 require 'spree/core/role_configuration'
 require 'spree/core/stock_configuration'
 require 'spree/permission_sets'
-
-require 'spree/core/price_migrator'
