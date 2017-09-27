@@ -1,5 +1,7 @@
+require 'spree/base'
+
 module Spree
-  class Variant
+  class Variant < Spree::Base
     # This class generates gross prices for all countries that have VAT configured.
     # The prices will include their respective VAT rates. It will also generate an
     # export (net) price for any country that doesn't have VAT.
